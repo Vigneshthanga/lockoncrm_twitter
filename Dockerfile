@@ -9,5 +9,5 @@ RUN touch /app/.env
 RUN pip install --find-links /app/wheels -r /app/requirements.txt
 RUN pip install gunicorn
 WORKDIR /app
-EXPOSE 5000
+EXPOSE 5001
 CMD ["./boot.sh"]
