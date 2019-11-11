@@ -1,0 +1,19 @@
+<!-- HTML page Author: Kevin Lai -->
+{% block content %}
+<div class='content-section'>
+	<h5><a href="/home/">Home</a> | <a href="/show_tweet/">Show Latest Tweets</a></h5>
+	<h1>Create a Tweet</h1>
+	<form method='POST' action="">
+		{{form.hidden_tag()}}
+		<div class = "form-group">
+			Enter your Tweet: 
+			{{ form.description(class="form-control form-control-lg")}}
+		</div>
+		<div class = "form-group">
+			{{ form.create_confirm(class="btn btn-outline-info")}}
+		</div>		
+	</form>
+	<br>
+	<h2>{{completion_msg}}</h2>
+</div>
+{% endblock %}
