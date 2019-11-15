@@ -42,6 +42,11 @@ twitter_user = api.me()
 @app.route("/twitter")
 @app.route("/twitter/home/")
 def homepage():
+    app.logger.debug('this is a DEBUG message')
+    app.logger.info('this is an INFO message')
+    app.logger.warning('this is a WARNING message')
+    app.logger.error('this is an ERROR message')
+    app.logger.critical('this is a CRITICAL message')
 	return render_template('home.html')
 
 @app.route("/twitter/create_tweet/", methods=['GET','POST'])
@@ -101,4 +106,7 @@ def test_show():
 '''
 
 if __name__ == '__main__':
+    gunicorn_logger = logging.getLogger('gunicorn.error')
+    app.logger.handlers = gunicorn_logger.handlers
+    app.logger.setLevel(gunicorn_logger.level)
 	app.run(debug=True)
