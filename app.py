@@ -47,7 +47,7 @@ def homepage():
     app.logger.warning('this is a WARNING message')
     app.logger.error('this is an ERROR message')
     app.logger.critical('this is a CRITICAL message')
-	return render_template('home.html')
+    return render_template('home.html')
 
 @app.route("/twitter/create_tweet/", methods=['GET','POST'])
 def create_tweet():
@@ -109,4 +109,4 @@ if __name__ == '__main__':
     gunicorn_logger = logging.getLogger('gunicorn.error')
     app.logger.handlers = gunicorn_logger.handlers
     app.logger.setLevel(gunicorn_logger.level)
-	app.run(debug=True)
+    app.run(debug=True)
