@@ -71,7 +71,7 @@ def show_tweet():
 	completion_msg = ""
 	tweet_id = ""
 	try:
-		user_tweets = api.home_timeline()
+		user_tweets = api.user_timeline()
 	except:
 		completion_msg = ""
 	form = DeleteTweetForm()
