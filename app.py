@@ -9,7 +9,7 @@ Author: Kevin Lai
 '''
 
 from flask import Flask, render_template, redirect, url_for
-from forms import CreateTweetForm, DeleteTweetForm, UserForm
+from forms import CreateTweetForm, DeleteTweetForm
 import tweepy
 import os
 from os.path import join, dirname
